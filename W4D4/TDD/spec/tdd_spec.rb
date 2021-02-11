@@ -42,13 +42,13 @@ require "tdd"
 
   end
 
-  describe " " do
+  # describe " " do
 
-    it " " do
-      expect
-    end
+  #   it " " do
+  #     expect
+  #   end
 
-  end
+  # end
 
 #allow()to recieve(:gets).and_return(:String)
   #expect()to recieve(:chomp)

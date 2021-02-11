@@ -37,36 +37,45 @@ class TowerOfHanoi
     @c = []
   end
 
+
   def play
     until self.won?
       print "Pick stack you would like to choose from"
       source = gets.chomp
       print "Where would you like to place it"
       target = gets.chomp
-      self.place(source, target)
+      self.convert_source(source, target)
+      self.render
     end
     print "You win!"
   end
 
-  def place(source, target)
-    
-  end
 
-  def move(n, start finish, aux)
-    if n > 0
-      # Move n - 1 disks from start to aux, so they are out of the way
-      move(n - 1, start, aux, finish)
+  def convert_source(source, target) 
 
-      # Move the nth disk from start to finish
-      finish.append(start.pop())
-
-      # Display our progress
-      print(a, b, c, '##############', sep='\n')
-
-      # Move the n - 1 disks that we left on aux onto finish
-      move(n - 1, aux, finish, start)
+    if source == "a"
+      source = @a.pop
+    elsif source == "b"
+      source = @b.pop
+    else
+      source = @c.pop
     end
 
+   if target == "a"
+      @a << source
+    elsif target == "b"
+      @b << source
+    else
+      @c << source
+    end
+
+  end
+
+
+  def render
+    puts @a
+    puts @b
+    puts @c
   end
 
   def won?
@@ -90,3 +99,21 @@ end
 
 # Initiate call from start A to finish C with aux B
 # move(3, A, C, B)
+
+
+
+
+  # def move(n, start finish, aux)
+  #   if n > 0
+  #     # Move n - 1 disks from start to aux, so they are out of the way
+  #     move(n - 1, start, aux, finish)
+
+  #     # Move the nth disk from start to finish
+  #     finish.append(start.pop())
+
+  #     # Display our progress
+  #     print(a, b, c, '##############', sep='\n')
+
+  #     # Move the n - 1 disks that we left on aux onto finish
+  #     move(n - 1, aux, finish, start)
+  #   end
