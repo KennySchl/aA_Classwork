@@ -36,15 +36,22 @@ require "tdd"
 
   describe "stock_picker(array)" do
 
-  it "outputs the most profitable pair of days on which to first buy the stock then sell the stock" do
-  
+    it "outputs the most profitable pair of days on which to first buy the stock then sell the stock" do
+      expect(stock_picker([3, 2, 1, 4, 5])).to eq([2, 4])
+    end
+
   end
 
+  describe " " do
+
+    it " " do
+      expect
+    end
 
   end
 
-
-
+#allow()to recieve(:gets).and_return(:String)
+  #expect()to recieve(:chomp)
   
  
 
