@@ -37,6 +37,21 @@ class TowerOfHanoi
     @c = []
   end
 
+  def play
+    until self.won?
+      print "Pick stack you would like to choose from"
+      source = gets.chomp
+      print "Where would you like to place it"
+      target = gets.chomp
+      self.place(source, target)
+    end
+    print "You win!"
+  end
+
+  def place(source, target)
+    
+  end
+
   def move(n, start finish, aux)
     if n > 0
       # Move n - 1 disks from start to aux, so they are out of the way
@@ -54,7 +69,24 @@ class TowerOfHanoi
 
   end
 
+  def won?
+    return true if target.length == 3
+  end
+
 end
+
+# require_relative "mastermind"
+
+# puts "Enter a size for the game: "
+# mastermind = Mastermind.new(gets.chomp.to_i)
+
+# until (mastermind.won?) do
+#   puts "-------------------------"
+#   puts a,b,c
+# end
+
+# puts "You win!"
+
 
 # Initiate call from start A to finish C with aux B
 # move(3, A, C, B)
