@@ -79,7 +79,6 @@ class TowerOfHanoi
   end
 
   def won?
-
     return true if @c.length == 3
   end
 

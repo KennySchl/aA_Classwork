@@ -44,27 +44,70 @@ require "tdd"
 
   describe TowerOfHanoi do
 
-    describe "#initialize" do
-
     let(:game) { TowerOfHanoi.new }
+
+    describe "#initialize" do
       
-
-      it "should create an instance of 3 arrays" do
-       expect(game.a).to eq([3, 2, 1])
-     
-    #                         initialize (type, amount, chef)
-    #    let(:brownie) { Dessert.new("brownie", 50, chef)}
-    #   type
-    #   @type = type
-
-    # expect(brownie.type).to eq('browni')
+      it "should create an instance of 3 arrays, @a has the initial stack" do
+        expect(game.a).to eq([3, 2, 1])
+        expect(game.b).to eq([])
+        expect(game.c).to eq([])
       end
 
     end
 
-  
+    describe "#a" do
 
+      it "should return @a and allow for it to be mutated" do
+        expect(game.a).to eq([3, 2, 1])
+        expect(game.a << 4).to eq([3, 2, 1, 4])
+      end
+
+    end
+
+    describe "#b" do
+
+      it "should return @b and allow for it to be mutated" do
+        expect(game.b).to eq([])
+        expect(game.b << 4).to eq([4])
+      end
+
+    end
+
+
+    describe "#c" do
+
+      it "should return @a and allow for it to be mutated" do
+        expect(game.c).to eq([])
+        expect(game.c << 4).to eq([4])
+      end
+
+    end
+
+    describe "#play" do
+
+      it "should return users input"  do
+        allow(game).to receive(:gets).and_return(source)
+      end
+
+    end
+    
   end
+  
+  #   def play
+  #   until self.won?
+  #     print "Pick stack you would like to choose from"
+  #     source = gets.chomp
+  #     print "Where would you like to place it"
+  #     target = gets.chomp
+  #     self.convert_source(source, target)
+  #     self.render
+  #   end
+  #   print "You win!"
+  # end
+
+
+  
 
 # allow()to recieve(:gets).and_return(:String)
 #   expect()to recieve(:chomp)
