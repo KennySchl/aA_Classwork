@@ -29,7 +29,7 @@ end
 
 class TowerOfHanoi
   
-  attr_reader :a, :b, :c
+  attr_accessor :a, :b, :c
 
   def initialize
     @a = [3, 2, 1]
@@ -79,7 +79,8 @@ class TowerOfHanoi
   end
 
   def won?
-    return true if target.length == 3
+
+    return true if @c.length == 3
   end
 
 end

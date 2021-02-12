@@ -42,16 +42,32 @@ require "tdd"
 
   end
 
-  # describe " " do
+  describe TowerOfHanoi do
 
-  #   it " " do
-  #     expect
-  #   end
+    describe "#initialize" do
 
-  # end
+    let(:game) { TowerOfHanoi.new }
+      
 
-#allow()to recieve(:gets).and_return(:String)
-  #expect()to recieve(:chomp)
+      it "should create an instance of 3 arrays" do
+       expect(game.a).to eq([3, 2, 1])
+     
+    #                         initialize (type, amount, chef)
+    #    let(:brownie) { Dessert.new("brownie", 50, chef)}
+    #   type
+    #   @type = type
+
+    # expect(brownie.type).to eq('browni')
+      end
+
+    end
+
+  
+
+  end
+
+# allow()to recieve(:gets).and_return(:String)
+#   expect()to recieve(:chomp)
   
  
 
