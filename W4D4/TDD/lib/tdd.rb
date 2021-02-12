@@ -29,12 +29,13 @@ end
 
 class TowerOfHanoi
   
-  attr_accessor :a, :b, :c
+  attr_accessor :a, :b, :c, :board
 
   def initialize
     @a = [3, 2, 1]
     @b = []
     @c = []
+    @board = [@a,@b,@c]
   end
 
 
@@ -68,14 +69,15 @@ class TowerOfHanoi
     else
       @c << source
     end
-
+    
   end
 
 
   def render
-    puts @a
-    puts @b
-    puts @c
+    # p @a
+    # p @b
+    # p @c
+    p @board
   end
 
   def won?

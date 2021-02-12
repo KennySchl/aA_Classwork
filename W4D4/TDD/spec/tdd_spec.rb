@@ -4,7 +4,7 @@ require "tdd"
 # describe Array do
 
   # let(:Array) {Array.new(5,)}
-  describe "my_uniq(arr)" do
+  describe "my_uniq(game.a)" do
 
     it "should return a new array with no duplicates" do
       expect(my_uniq([1, 2, 1, 3, 3])).to eq([1, 2, 3])
@@ -84,34 +84,37 @@ require "tdd"
 
     end
 
-    describe "#play" do
+    describe "#convert_source(source, target)" do
 
-      it "should return users input"  do
-        allow(game).to receive(:gets).and_return(source)
+      it "should move top disk from source to target" do
+        expect(game.convert_source("a","c")).to eq([1])
+        
       end
 
+      it "should always have an array in descending order" do
+        expect(game.a).to eq(game.a.sort {|a,b| b <=> a})
+        expect(game.b).to eq(game.b.sort {|a,b| b <=> a})
+        expect(game.c).to eq(game.c.sort {|a,b| b <=> a})
+        end
     end
-    
+
+
+    describe "#render" do
+
+      it "should render board" do
+        expect(game.render).to eq([game.a,game.b,game.c])
+      end
+    end
+
+    describe "#won?" do
+
+      it "should print 'You Win!' if game is over" do
+        expect().to ()
+      end
+    end
+
   end
-  
-  #   def play
-  #   until self.won?
-  #     print "Pick stack you would like to choose from"
-  #     source = gets.chomp
-  #     print "Where would you like to place it"
-  #     target = gets.chomp
-  #     self.convert_source(source, target)
-  #     self.render
-  #   end
-  #   print "You win!"
-  # end
 
-
-  
-
-# allow()to recieve(:gets).and_return(:String)
-#   expect()to recieve(:chomp)
-  
  
 
 
