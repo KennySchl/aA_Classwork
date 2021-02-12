@@ -107,9 +107,10 @@ require "tdd"
     end
 
     describe "#won?" do
-
+      let()
       it "should print 'You Win!' if game is over" do
-        expect().to ()
+        #expect(game.won?).to eq(true)
+        allow(game).to receive(c).and_return ([3,2,1])
       end
     end
 
