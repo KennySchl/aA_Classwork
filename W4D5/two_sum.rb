@@ -1,45 +1,45 @@
-# def two_sum?(arr, target_sum)
-#   (0...arr.length).each do |i|
-#   (i+1...arr.length).each do |j|
+def two_sum?(arr, target_sum)
+  (0...arr.length).each do |i|
+  (i+1...arr.length).each do |j|
     
-#     return true if arr[i] + arr[j] == target_sum
-#     end
-#   end
-#   false
-# end
+    return true if arr[i] + arr[j] == target_sum
+    end
+  end
+  false
+end
 
-# arr = [0, 1, 5, 7]
-# p two_sum?(arr, 6) # => should be true
-# p two_sum?(arr, 10) # => should be false
+arr = [0, 1, 5, 7]
+p two_sum?(arr, 6) # => should be true
+p two_sum?(arr, 10) # => should be false
 
-# def bsearch(arr, target)
-#   return nil if arr.empty?
-#   mid = arr.length / 2
-#   return mid if arr[mid] == target
+def bsearch(arr, target)
+  return nil if arr.empty?
+  mid = arr.length / 2
+  return mid if arr[mid] == target
 
-#   if target < arr[mid]
-#     bsearch(arr[0...mid], target)
-#   else
-#    result = bsearch(arr[mid + 1..-1], target)
-#    result.nil? ? nil : mid + 1 + result
-#   end
-# end
+  if target < arr[mid]
+    bsearch(arr[0...mid], target)
+  else
+   result = bsearch(arr[mid + 1..-1], target)
+   result.nil? ? nil : mid + 1 + result
+  end
+end
 
-# def okay_two_sum?(arr, target)
-#   sum = []
+def okay_two_sum?(arr, target)
+  sum = []
 
-#   i = 0
-#   while i < arr.length
-#     sum << arr[i..-1].sum  
-#     sum << arr.reverse[i..-1].sum  
-#     i += 1
-#   end
-#  bsearch(sum.sort, target).nil? ? false : true
-# end
+  i = 0
+  while i < arr.length
+    sum << arr[i..-1].sum  
+    sum << arr.reverse[i..-1].sum  
+    i += 1
+  end
+ bsearch(sum.sort, target).nil? ? false : true
+end
 
-#  arr = [0, 1, 5, 7]
-# p okay_two_sum?(arr, 6) # => should be true
-# p okay_two_sum?(arr, 10) # => should be false
+ arr = [0, 1, 5, 7]
+p okay_two_sum?(arr, 6) # => should be true
+p okay_two_sum?(arr, 10) # => should be false
 
 
 def hash_two_sum?(arr, target)

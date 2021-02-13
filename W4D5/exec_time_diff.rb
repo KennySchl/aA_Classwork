@@ -44,26 +44,37 @@ list = [5, 3, -7]
 # end
 
 # p largest_contiguous_subsum(list)
-#O(n^2)
+#O(n^3)
 
 #O(n)
 def largest_contiguous_subsum_2(list)
+  p subs = []
   sum = 0
   largest_sum = 0
-
   i = 0
-  while i < list.length
-    a = list[i..-1].sum  
-    b = list.reverse[i..-1].sum  
+  while i < list.length 
+    p subs << list[0..i] 
     
-    if a > largest_sum && a > b
-      largest_sum = a
-    elsif b > largest_sum
-      largest_sum = b
-    end
     i += 1
   end
-  largest_sum
+   p subs
 end
 
 p largest_contiguous_subsum_2(list)
+
+# sum = 0
+# largest_sum = 0
+
+# i = 0
+# while i < list.length
+#   a = list[i..-1].sum  
+#   b = list.reverse[i..-1].sum  
+  
+#   if a > largest_sum && a > b
+#     largest_sum = a
+#   elsif b > largest_sum
+#     largest_sum = b
+#   end
+#   i += 1
+# end
+# largest_sum
