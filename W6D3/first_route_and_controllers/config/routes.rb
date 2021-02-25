@@ -3,12 +3,14 @@ Rails.application.routes.draw do
   # resources :users
 
   get 'users', to: 'users#index'
-  get 'users/:id', to: 'users#show' 
-  patch 'users/:id', to: 'users#update'
+  get 'users/:id', to: 'users#show'
+  patch 'users/:id', to: 'users#update', as: 'user'
   put 'users/:id', to: 'users#update'
   delete 'users/:id', to: 'users#destroy'
   post 'users', to: 'users#create'
   get  'users/new', to: 'users#new', as: 'new_user'
   get 'users/:id/edit', to: 'users#edit'
+
+  # resources :users
 
 end
