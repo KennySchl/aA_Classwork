@@ -16,13 +16,13 @@ class Artwork < ApplicationRecord
     foreign_key: :artist_id,
     class_name: :User
 
-    has_many :artworks,
-      foreign_key: :artwork_id,
-      class_name: :ArtworkShare
+  has_many :shares, # how many times the artwork is shared?
+    foreign_key: :artwork_id,
+    class_name: :ArtworkShare
 
-      has_many :shared_viewers,
-        through: :artworks,
-        source: :viewer
+  has_many :shared_viewers,
+    through: :shares,
+    source: :viewer
 
+  
 end
-

@@ -5,4 +5,51 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-user_1 = User.create([{username: 'art_jason'}])
+
+require 'securerandom'
+
+def rand_id
+  rand(1..100_000)
+end
+
+ActiveRecord::Base.transaction do
+  Artwork.delete_all
+  User.delete_all
+  ArtworkShare.delete_all
+
+    user_1 = User.create(
+        id: rand_id,
+        username: 'art_jason'
+    )
+
+    user_2 = User.create(
+        id: rand_id,
+        username: 'art_kenneth'
+    )
+
+    artwork1 = Artwork.create(
+        id: rand_id,
+        title: 'Mona Lisa',
+        image_url: SecureRandom.hex(10),
+        artist_id: user_1.id
+    )
+
+    artwork2 = Artwork.create(
+        id: rand_id,
+        title: 'The Scream',
+        image_url: SecureRandom.hex(10),
+        artist_id: user_2.id
+    )
+
+    artwork_share1 = ArtworkShare.create(
+        id: rand_id,
+        artwork_id: artwork1.id,
+        viewer_id: user_2.id
+    )
+
+    artwork_share2 = ArtworkShare.create(
+        id: rand_id,
+        artwork_id: artwork2.id,
+        viewer_id: user_1.id
+    )
+end

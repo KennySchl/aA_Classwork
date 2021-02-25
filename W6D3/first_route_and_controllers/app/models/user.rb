@@ -14,13 +14,14 @@ class User < ApplicationRecord
         foreign_key: :artist_id,
         class_name: :Artwork
 
-
-    has_one :artwork_share,
+    has_one :share,
         foreign_key: :viewer_id,
         class_name: :ArtworkShare
-
+    # a user cannot have a single artwork shared with 
+    # them more than once 
+    
     has_many :shared_artworks,
-        through: :artwork_share,
+        through: :share,
         source: :artwork
-
+    
 end
