@@ -6,4 +6,40 @@
   background: #000;
   border-radius: 50%;
 }
+.header {
+  z-index: 1;
+  position: relative;
+}
+.header-list > li {
+  position: relative;
+}
+.header-notifications {
+  display: none;
+  position: absolute;
+  left: -1px;
+  font-size: 14px;
+  color: black;
+  width: 100%;
+  white-space: nowrap;
+  background: #ffff;
+  border-left: 1px solid #ffff;
+  border-right: 1px solid #ffff;
+  border-bottom: 1px solid #ffff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  overflow: hidden;
+}
+li:hover .header-notifications {
+  display: block;
+}
+li:hover .badge {
+  background: #E60C00;
+}
+.header-notifications > li {
+  border-top: 1px solid #000;
+  color: #000;
+}
+
+.header-notifications > li:hover {
+  background: #e5adaa;
 }
