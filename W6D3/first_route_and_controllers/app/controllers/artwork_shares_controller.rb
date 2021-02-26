@@ -3,7 +3,7 @@ class ArtworkSharesController < ApplicationController
   #show and update
   #get, patch/put
   #user_id to our index action to filter
-  
+
 #   def index
 #     artworks = ArtworkShare.all 
 #     render json: artworks

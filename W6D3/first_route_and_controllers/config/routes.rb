@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   # get 'users/:id/edit', to: 'users#edit'
 
   resources :users, only: [:index, :create, :show, :update, :destroy] do
-
     resources :artworks, only: [:index]
   end
 
