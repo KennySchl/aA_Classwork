@@ -3,14 +3,15 @@ class CommentsController < ApplicationController
   #create,destroy,index
   #user_id, #artwork_id
   def index
-    user_comments = Comment.where(commenter_id: params[:user_id])
-    artwork_comments = Comment.where(artwork_id: param[:artwork_id])
-    render json: user_comments
-     
-  #   {
-  #     user_comments: user_comments,
-  #     artwork_comments: artwork_comments
-  # }
+    case
+    when params[:user_id]
+      comments = Comment.where(user_id: params[:user_id])
+    when params[:artwork_id]
+      comments = Comment.where(artwork_id: params[:artwork_id])
+    else
+      comments = Comment.all
+    end
+    render json: comments
   end
 
   # def create
