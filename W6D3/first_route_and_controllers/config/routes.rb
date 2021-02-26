@@ -12,11 +12,13 @@ Rails.application.routes.draw do
   # get 'users/:id/edit', to: 'users#edit'
 
   resources :users, only: [:index, :create, :show, :update, :destroy] do
+    resources :comments, only: [:index, :create, :destroy]
     resources :artworks, only: [:index]
+  end  
+
+  resources :artworks, except: [:index, :create, :show, :update, :destroy] do
+    resources :comments, only: [:index, :create, :destroy]
   end
-
-  
-
   resources :artwork_shares, only: [:create, :destroy]
-  
+
 end

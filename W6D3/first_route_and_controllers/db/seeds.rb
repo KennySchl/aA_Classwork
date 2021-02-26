@@ -52,4 +52,38 @@ ActiveRecord::Base.transaction do
         artwork_id: artwork2.id,
         viewer_id: user_1.id
     )
+    
+    comment_1 = Comment.create(
+        id: rand_id,
+        commenter_id: user_1.id,
+        artwork_id: artwork2.id,
+        body: 'WOWWWWWWWWWW!'
+    )
+
+    comment_2 = Comment.create(
+        id: rand_id,
+        commenter_id: user_2.id,
+        artwork_id: artwork2.id,
+        body: 'I know right!'
+    )
+
+    comment_3 = Comment.create(
+        id: rand_id,
+        commenter_id: user_1.id,
+        artwork_id: artwork1.id,
+        body: 'I''m great'
+    )
+    comment_4 = Comment.create(
+        id: rand_id,
+        commenter_id: user_2.id,
+        artwork_id: artwork1.id,
+        body: 'Nice...'
+    )
+    comment_4 = Comment.create(
+        id: rand_id,
+        commenter_id: user_2.id,
+        artwork_id: artwork2.id,
+        body: 'Hellooooooooo'
+    )
+
 end
