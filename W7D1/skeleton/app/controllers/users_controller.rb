@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      session[:session_token] = reset_session_token!
+      login!
       redirect_to user_url(@user.id)
     else
       render :new

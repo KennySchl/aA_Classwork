@@ -9,6 +9,9 @@
   </head>
 
   <body>
+    <header><%= @current_user.username if @current_user %></header>
     <%= yield %>
+    <%= render "logged_in", current_user: @current_user, action: "create" %>
   </body>
+
 </html>
