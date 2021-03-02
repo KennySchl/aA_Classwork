@@ -9,9 +9,21 @@
   </head>
 
   <body>
-    <header><%= @current_user.username if @current_user %></header>
-    <%= yield %>
-    <%= render "logged_in", current_user: @current_user, action: "create" %>
+    <header>
+      <h1><a href="<%= cats_url %>">99 Cats</a></h1>
+      <%= yield %>
+      <% if !current_user.nil? %>
+        <%= current_user.username %>
+        <form action="<%= new_session_url %>"" method="POST">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="Logout">
+          </form>
+      <% else %>  
+          <a href="<%= new_session_url %>">Sign In</a>
+          <a href="<%= new_user_url %>">Sign Up</a>
+      <% end %>
+    </header>
   </body>
 
 </html>
