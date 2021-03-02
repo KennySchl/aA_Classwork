@@ -10,6 +10,36 @@
   </head>
 
   <body>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="<%= new_session_url %>">MusicApp</a>
+          <% if current_user.nil? %>
+        <div id="navbarText">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <button type="button" class="btn btn-outline-light"><a href="<%= new_session_url %>">Sign in</a></button>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn btn-outline-light"><a href="<%= new_user_url %>">Sign up</a></button>
+          </li>
+        </ul>
+        </div>
+          <% else %>
+        <div id="navbarText">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <%= current_user.username %>
+          </li>
+          <li class="nav-item">
+            <form action="<%= session_url %>" method="post">
+            <%= auth_token %>
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="Logout">
+            </form>
+            </li>  
+          <% end %>  
+          </div>   
+      </nav>
     <%= yield %>
   </body>
 </html>
