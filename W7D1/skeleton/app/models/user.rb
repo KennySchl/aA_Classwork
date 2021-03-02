@@ -10,6 +10,14 @@
 #  updated_at      :datetime         not null
 #
 class User < ApplicationRecord
+
+  #SPIRE
+  #self.find_by_credentials(username, password)
+  #password=(password)
+  #is_password?(password)
+  #reset_session_token!
+  #private---------- after_initialize !!!!!!!!
+  #ensure_session_token
   validates :username, :session_token, presence: true, uniqueness: true
   # validates :password, length: { minimum: 6 }
   validates :password_digest, presence: true
@@ -31,6 +39,7 @@ class User < ApplicationRecord
 
   def is_password?(password)
     BCrypt::Password.new(self.password_digest).is_password?(password)
+    #is_password? instance method of Bcrypt
   end
 
   def self.find_by_credentials(username, password)
