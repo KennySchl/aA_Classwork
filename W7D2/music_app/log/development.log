@@ -7377,3 +7377,48 @@ Processing by BandsController#index as HTML
 Completed 200 OK in 44ms (Views: 37.5ms | ActiveRecord: 3.3ms)
 
 
+Started GET "/bands" for ::1 at 2021-03-02 15:59:35 -1000
+Started GET "/bands" for ::1 at 2021-03-02 15:59:35 -1000
+Started GET "/" for 127.0.0.1 at 2021-03-02 15:59:35 -1000
+Started GET "/bands" for ::1 at 2021-03-02 15:59:35 -1000
+Started GET "/bands" for ::1 at 2021-03-02 15:59:35 -1000
+Processing by BandsController#index as HTML
+Processing by BandsController#index as HTML
+Processing by BandsController#index as HTML
+Processing by BandsController#index as HTML
+  Rendering bands/index.html.erb within layouts/application
+  Rendering bands/index.html.erb within layouts/application
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (4.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:10
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.8ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  [1m[36mBand Load (1.7ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:10
+  ↳ app/views/bands/index.html.erb:10
+  [1m[36mBand Load (6.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:10
+  Rendered bands/index.html.erb within layouts/application (22.5ms)
+  Rendered bands/index.html.erb within layouts/application (18.6ms)
+  Rendered bands/index.html.erb within layouts/application (16.1ms)
+  Rendered bands/index.html.erb within layouts/application (19.4ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "7ho-3M8yUG-MvaQXEW1iEw"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "7ho-3M8yUG-MvaQXEW1iEw"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "7ho-3M8yUG-MvaQXEW1iEw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "7ho-3M8yUG-MvaQXEW1iEw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 137ms (Views: 114.2ms | ActiveRecord: 18.4ms)
+
+
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 116ms (Views: 97.0ms | ActiveRecord: 18.3ms)
+
+
+Completed 200 OK in 139ms (Views: 118.4ms | ActiveRecord: 12.7ms)
+
+
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 140ms (Views: 118.9ms | ActiveRecord: 11.5ms)
+
+
