@@ -8,5 +8,6 @@
 #  updated_at :datetime         not null
 #
 class Band < ApplicationRecord
-  
+  validates :name, presence: true
+
 end
