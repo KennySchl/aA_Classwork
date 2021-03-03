@@ -10,7 +10,9 @@
 #  updated_at      :datetime         not null
 #
 class User < ApplicationRecord
-
+  validates :email, presence: true, uniqueness: true
+  validates :password_digest, presence: true
+  validates :session_token, presence: true, uniqueness: true
   #SPIRE
 
   #self.find_by_credentials
