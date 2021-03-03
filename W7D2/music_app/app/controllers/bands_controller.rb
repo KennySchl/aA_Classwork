@@ -1,7 +1,7 @@
 class BandsController < ApplicationController
 
   def index
-    @band = Band.all 
+    @bands = Band.all 
     render :index
   end
 
@@ -35,7 +35,7 @@ class BandsController < ApplicationController
   private
 
   def band_params
-    params.require(:band).permit(:name)
+    params.require(:band).permit(:name, :description, :image_url)
   end
 
 end

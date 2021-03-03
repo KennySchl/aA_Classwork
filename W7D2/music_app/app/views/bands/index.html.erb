@@ -1,0 +1,20 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Bands</h1>
+    <p class="lead">Library of all the bands.</p>
+  </div>
+</div>
+
+<div class="container card-deck">
+<% @bands.each do |band| %>
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="<%= band.image_url %>" alt="<%= band.name %> photo.">
+  <div class="card-body">
+    <h5 class="card-title"><%= band.name %></h5>
+    <p class="card-text"><%= band.description %></p>
+    <a style="color: white" href="<%= band_url(band) %>" class="btn btn-dark"><%= band.name %>'s Page</a>
+  </div>
+</div>
+<br>
+<% end %>
+</div>
