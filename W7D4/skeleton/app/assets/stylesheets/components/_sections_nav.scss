@@ -1,0 +1,25 @@
+.section-nav {
+  margin: 5px 2px 5px 0px;
+  padding: 4px;
+  border-bottom: 1px;
+  border-style: solid;
+  border-color: $light-gray;
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+
+  li{
+    padding: 0px 4px;
+    font-family: "nyt-franklin",arial,helvetica,sans-serif;
+  }
+
+  .all-link:hover {
+    text-decoration: underline;
+    background-color: transparent;
+  }
+   a:hover {
+    background-color: $light-gray;
+  }
+} 

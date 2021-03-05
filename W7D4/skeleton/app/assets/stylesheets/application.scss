@@ -13,6 +13,8 @@
  *= require_self
  */
 
+@import "bootstrap";
+
 // CSS Reset
 @import "base/reset.scss";
 
@@ -25,3 +27,16 @@
 
 // Components
 @import "components/*";
+
+
+.pleasework {
+  display: none;
+  float: right;
+  position: absolute;
+  z-index: 1;
+  top: 50px;
+  right: 200px;
+}
+.show {
+  display: block;
+}
