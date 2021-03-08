@@ -1,0 +1,8 @@
+
+<%= form_with url: session_url, local: true, method: :post do |f| %>
+    <%= f.label 'user[username]', 'Username' %>
+    <%= f.text_field 'user[username]' %>
+    <%= f.label 'user[password]', 'Password' %>
+    <%= f.password_field 'user[password]' %>
+    <%= f.submit 'Sign In' %>
+<% end %>

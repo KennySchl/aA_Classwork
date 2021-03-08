@@ -1,0 +1,7 @@
+<%= form_with url: users_url, local:true, method: :post do |f| %>
+    <%= f.label 'user[username]', 'Username' %>
+    <%= f.text_field 'user[username]', value: @user.username %>
+    <%= f.label 'user[password]', 'Password' %>
+    <%= f.password_field 'user[password]', value: @user.password %>
+    <%= f.submit 'Sign Up' %>
+<% end %>
