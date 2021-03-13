@@ -7,7 +7,7 @@ const reader = readline.createInterface({
 
 const addNumbers = (sum = 0, numsLeft, completionCallback) => {
   if (numsLeft > 0) {
-    reader.question("Enter a number: ", function (num) {
+    reader.question("Enter a number: ", (num) => {
       const number = parseInt(num);
       sum += number;
       console.log(sum);
