@@ -18,7 +18,7 @@ Function.prototype.myBind = function (context, ...arg1) {
 
 
 class Cat {
-  constructor(name) {
+  constructor(name) { 
     this.name = name;
   }
 
